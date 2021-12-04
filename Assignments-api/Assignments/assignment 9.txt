@@ -1,0 +1,86 @@
+
+
+
+------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+namespace file_Handling
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           FileStream f = new FileStream("F:\\demo1.txt", FileMode.OpenOrCreate);
+           BinaryFormatter b = new BinaryFormatter();
+           s_demo s = (s_demo)b.Deserialize(f);
+           Console.WriteLine("Number = {0}",s.no);
+           Console.WriteLine("Name ={0}", s.name);
+
+
+        }
+    }
+    [Serializable]
+    class s_demo
+    {
+       public int no;
+        public string name;
+        public s_demo(int no, string name)
+        {
+            this.no = no;
+            this.name = name;
+        }
+    }
+}
+
+------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+namespace file_Handling
+{
+    public class SerialTest
+    {
+        public  void SerializeNow()
+        {
+            ClassToSerialize c = new ClassToSerialize();
+            FileStream f = new FileStream("F:\\demo2.txt", FileMode.OpenOrCreate);
+            BinaryFormatter b = new BinaryFormatter();
+            b.Serialize(f, c);
+            f.Close();
+        }
+        public void DeSerializeNow()
+        {
+            ClassToSerialize c = new ClassToSerialize();
+            FileStream f = new FileStream("F:\\demo2.txt", FileMode.OpenOrCreate);
+            BinaryFormatter b = new BinaryFormatter();
+            c = (ClassToSerialize)b.Deserialize(f);
+            Console.WriteLine(c.name);
+            f.Close();
+        }
+    }
+    class Program
+    {
+       
+        static void Main(string[] args)
+        {
+            SerialTest st = new SerialTest();
+            st.SerializeNow();
+            st.DeSerializeNow();
+
+
+        }
+    }
+    [Serializable]
+    public class ClassToSerialize
+    {
+        public int age = 100;
+        public string name = "bipin";
+    } 
+}

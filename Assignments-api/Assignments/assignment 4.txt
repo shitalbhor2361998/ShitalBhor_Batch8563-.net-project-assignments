@@ -1,0 +1,141 @@
+//Assignment file operation
+ /*
+            FileStream f = new FileStream("F:\\demo.txt", FileMode.OpenOrCreate);
+            f.WriteByte(65);
+            f.WriteByte(66);
+            f.Close();
+             * */
+           
+            /*int i;
+            FileStream f = new FileStream("F:\\demo.txt", FileMode.OpenOrCreate);
+            for (i = 65; i <= 100; i++)
+            {
+                f.WriteByte((byte)i);
+            }
+            f.Close();
+             * */
+           
+            /*FileStream f = new FileStream("F:\\demo.txt", FileMode.OpenOrCreate);
+            int i = 0;
+            while ((i = f.ReadByte()) != -1)
+            {
+                Console.Write((char)i);
+            }
+            */
+            /*
+            FileStream f = new FileStream("F:\\demo.txt", FileMode.OpenOrCreate);
+            StreamWriter s1 = new StreamWriter(f);
+            s1.WriteLine("This is line using stream writer .");
+            s1.Close();
+            f.Close();
+            Console.WriteLine("Data inserted :)");
+             * */
+            FileStream f = new FileStream("F:\\demo.txt", FileMode.OpenOrCreate);
+            StreamReader s = new StreamReader(f);
+            string ab = s.ReadLine();
+            Console.WriteLine(ab);
+            s.Close();
+            f.Close();
+
+
+
+
+
+
+BinaryWriter
+---------------
+static void Main(string[] args)  
+        {  
+            string fileName = "e:\\binaryfile.dat";  
+            using (BinaryWriter writer = new BinaryWriter(File.Open(fileName, FileMode.Create)))  
+            {  
+                writer.Write(2.5);  
+                writer.Write("this is string data");  
+                writer.Write(true);  
+            }  
+            Console.WriteLine("Data written successfully...");    
+        }  
+
+BinaryReader
+---------------------
+  class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            WriteBinaryFile();  
+            ReadBinaryFile();  
+            Console.ReadKey();  
+        }  
+        static void WriteBinaryFile()  
+        {  
+            using (BinaryWriter writer = new BinaryWriter(File.Open("e:\\binaryfile.dat", FileMode.Create)))  
+            {  
+                 
+                writer.Write(12.5);  
+                writer.Write("this is string data");  
+                writer.Write(true);  
+            }  
+        }  
+        static void ReadBinaryFile()  
+        {  
+            using (BinaryReader reader = new BinaryReader(File.Open("e:\\binaryfile.dat", FileMode.Open)))  
+            {  
+                Console.WriteLine("Double Value : " + reader.ReadDouble());  
+                Console.WriteLine("String Value : " + reader.ReadString());  
+                Console.WriteLine("Boolean Value : " + reader.ReadBoolean());  
+            }  
+        }  
+    }  
+------------------
+DirectoryInfo Class
+
+class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            // Provide directory name with complete location.  
+            DirectoryInfo directory = new DirectoryInfo(@"F:\javatpoint");  
+            try  
+            {  
+                // Check, directory exist or not.  
+                if (directory.Exists)  
+                {  
+                    Console.WriteLine("Directory already exist.");  
+                    return;  
+                }  
+                // Creating a new directory.  
+                directory.Create();  
+                Console.WriteLine("The directory is created successfully.");  
+            }  
+            catch (Exception e)  
+            {  
+                Console.WriteLine("Directory not created: {0}", e.ToString());  
+            }  
+        }  
+    }  
+}  
+--------
+Deleting Directory
+using System;  
+using System.IO;  
+namespace CSharpProgram  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            // Providing directory name with complete location.  
+            DirectoryInfo directory = new DirectoryInfo(@"F:\javatpoint");  
+            try  
+            {  
+                // Deleting directory  
+                directory.Delete();  
+                Console.WriteLine("The directory is deleted successfully.");  
+            }  
+            catch (Exception e)  
+            {  
+                Console.WriteLine("Something went wrong: {0}", e.ToString());  
+            }  
+        }  
+    }  
+}  

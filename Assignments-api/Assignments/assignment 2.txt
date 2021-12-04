@@ -1,0 +1,123 @@
+//Assignment factorial and other
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using fact;
+namespace ConsoleApplication33
+{
+    class Program : Class2
+    {
+        static void Main(string[] args)
+        {
+            
+            Console.WriteLine("Good Morning");
+            demo.demo1 obj = new demo.demo1();
+            obj.add();
+            fact1 obj1 = new fact1();
+            obj1.f_demo();
+            Class1 obj3 = new Class1();
+            obj3.demo2();
+             
+            Program p = new Program();
+            p.demo_2();
+            Console.WriteLine("the var from class 2 = {0}",p.res);
+             
+            Class3 obj4 = new Class3();
+            obj4.demo_3();
+            Console.WriteLine("the var from class 3 = {0}", obj4.res1);
+            
+        }
+    }
+    
+}
+
+namespace demo
+{
+    class demo1
+    {
+        public void add()
+        {
+           
+            int n1, n2,res;
+            Console.WriteLine("Enter Two numbers");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            n2 = Convert.ToInt32(Console.ReadLine());
+            res = n1 + n2;
+            Console.WriteLine("The add of {0} and {1} = {2}", n1, n2, res);
+        }
+    }
+}
+
+namespace fact
+{
+  public  class fact1
+    {
+        public void f_demo()
+        {
+            int n, f = 1;
+            Console.WriteLine("Enter a numbers");
+            n = Convert.ToInt32(Console.ReadLine());
+            while (n > 0)
+            {
+                f = f * n;
+                n--;
+            }
+            Console.WriteLine("The factorial is = {0}",f);
+
+        }
+    }
+}
+-----------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication33
+{
+  public  class Class1
+    {
+      public void demo2()
+      {
+          Console.WriteLine("Hello from demo2");
+      }
+    }
+}
+
+--------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication33
+{
+    class Class2
+    {
+        protected int res = 100;
+        protected void demo_2()
+        {
+            Console.WriteLine("This is from class 2 protected method.");
+        }
+    }
+}
+
+------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication33
+{
+    class Class3
+    {
+        internal int res1 = 200;
+        internal void demo_3()
+        {
+            Console.WriteLine("this is from class _ 3");
+        }
+    }
+}

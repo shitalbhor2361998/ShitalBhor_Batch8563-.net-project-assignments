@@ -1,0 +1,178 @@
+//Assignment in trasaction
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication29
+{
+
+    class demo
+    {
+    
+        private String name;
+        private int a_balance,a_no;
+       
+
+        public String u_name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+       
+        public int acb
+        {
+            get 
+            {
+                return a_balance;
+            }
+            set 
+            {
+                a_balance = value;
+            }
+        }
+         public int acn
+        {
+            get 
+            {
+                return a_no;
+            }
+            set 
+            {
+                a_no = value;
+            }
+        }
+        public void accept()
+        {//Debit //credit
+            
+            int i,ch;
+            Console.WriteLine("Enter the amount for transaction:");
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[size];
+            Console.WriteLine("Start the transaction");
+            for (i = 0; i < size; i++)
+            {
+                Console.WriteLine("1:Credir \n2:Debit");
+                ch=Convert.ToInt32(Console.ReadLine());
+                switch (ch)
+                {
+                    case 1:
+                        Console.WriteLine("Enter your credit amount :");
+                        arr[i] = Convert.ToInt32(Console.ReadLine());
+                        a_balance = a_balance + arr[i];
+                        break;
+                    case 2:
+                        Console.WriteLine("Enter your debit amount :");
+                        arr[i] = Convert.ToInt32(Console.ReadLine());
+                        a_balance = a_balance - arr[i];
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Input");
+                        break;
+
+                }
+
+            }
+
+        }
+       
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            demo obj = new demo();
+
+           
+            Console.WriteLine("Enter your name");
+           obj.u_name = Console.ReadLine();
+            Console.WriteLine("Enter Account Number");
+            obj.acn=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Account Balance");
+            obj.acb=Convert.ToInt32(Console.ReadLine());
+            obj.accept();
+            Console.WriteLine("Name:{0}",obj.u_name);
+            Console.WriteLine("AC No:{0}", obj.acn);
+            Console.WriteLine("Main Balance :{0}", obj.acb);
+
+           
+        }
+    }
+}
+
+
+
+---------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication29
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str,str1;
+            Console.WriteLine("Enter the string value");
+            str = Console.ReadLine();
+           /* str1 = str.ToLower();
+            Console.WriteLine("The string in Original {0}", str);
+            Console.WriteLine("The string in lowecase {0}",str1);
+            str1 = str.ToUpper();
+            Console.WriteLine("The string in Original {0}", str);
+            Console.WriteLine("The string in Upper case {0}", str1);
+           
+            str1 = (String)str.Clone();
+            Console.WriteLine("The string in Original {0}", str);
+            Console.WriteLine("The string in clone case {0}", str1);
+       
+            Console.WriteLine("Enter the string value");
+            str1 = Console.ReadLine();
+            Console.WriteLine("Compare : {0}",string.Compare(str,str1));
+        
+            Console.WriteLine("Enter the string value");
+            str1 = Console.ReadLine();
+            Console.WriteLine(str.CompareTo(str1));
+          
+            Console.WriteLine("Enter the string value");
+            str1 = Console.ReadLine();
+            Console.WriteLine(string.Concat(str, str1));
+     
+            Console.WriteLine("Enter the string value");
+            str1 = Console.ReadLine();
+            Console.WriteLine(str.Contains(str1));
+      
+
+            str1 = string.Copy(str);
+            Console.WriteLine(str1);
+         
+
+            Console.WriteLine("Enter the string value");
+            str1 = Console.ReadLine();
+            Console.WriteLine(str.StartsWith(str1));
+
+            Console.WriteLine(str.EndsWith(str1));
+        
+            Console.WriteLine("Enter the string value");
+            str1 = Console.ReadLine();
+            Console.WriteLine(str.Equals(str1));
+            * */
+            string[] str2 = str.Split(' ');
+            foreach (string str3 in str2)
+            {
+                Console.WriteLine(str3);
+            }
+        }
+    }
+}

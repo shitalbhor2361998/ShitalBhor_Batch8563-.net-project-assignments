@@ -1,0 +1,97 @@
+Hybrid demo:
+-------------------
+namespace Interface_Demo
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            C obj = new C();
+            obj.grt3();
+            obj.grt5();          
+        }
+    }
+
+    class A
+    {
+       public int size, i;
+        public int[] accept()
+        {
+            
+            Console.WriteLine("Enter the size");
+            size = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[size];
+            Console.WriteLine("Now Enter {0} Numbers :",size);
+            for (i = 0; i < size; i++)
+            {
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("The  Entered {0} Numbers are :", size);
+            for (i = 0; i < size; i++)
+            {
+                Console.Write("{0}\t",arr[i]);
+            }
+            return arr;
+        }
+ 
+    }
+    class B : A
+    {
+        public void grt3()
+        {
+            Console.WriteLine("Greater between 3 No Program :");
+            int[] arr1=accept();
+            int gt = arr1[0];
+            for (i = 0; i < size; i++)
+            {
+                if (gt < arr1[i])
+                {
+                    gt = arr1[i];
+                }
+ 
+            }
+            Console.WriteLine("\nThe greater no is = {0}",gt);
+           
+        }
+ 
+    }
+    class C : B 
+    {
+        public void grt5()
+        {
+            Console.WriteLine("Greater between 5 No Program :");
+            int[] arr1 = accept();
+            int gt = arr1[0];
+            for (i = 0; i < size; i++)
+            {
+                if (gt < arr1[i])
+                {
+                    gt = arr1[i];
+                }
+
+            }
+            Console.WriteLine("\nThe greater no is = {0}", gt);
+
+        }
+
+    }
+    class D : A 
+    {
+
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,179 @@
+//Assignment sum of the numbers and other program
+
+namespace ConsoleApplication18
+{
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            sub obj = new sub();
+            obj.sub_demo();
+            obj.add_demo();
+            
+            Console.ReadKey();
+        }
+    }
+
+    class add
+    {
+        int n1, n2, sum;
+        public void add_demo()
+        {
+            Console.WriteLine("Enter two numbers");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            n2 = Convert.ToInt32(Console.ReadLine());
+            sum = n1 + n2;
+            Console.WriteLine("The addition is ="+sum);
+        }
+    }
+     
+    class sub : add
+    {
+        int n1, n2, sum;
+        public void sub_demo()
+        {
+            Console.WriteLine("Enter two numbers");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            n2 = Convert.ToInt32(Console.ReadLine());
+            sum = n1 - n2;
+            Console.WriteLine("The sub is =" + sum);
+        }
+    }
+}
+
+//WAP to accept 2 no from user and do the process of swapping with 3rd var and withour 3rd variable. (Single)
+
+
+Multi level
+-----------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication18
+{
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            mul obj = new mul();
+            obj.add_demo();
+            obj.sub_demo();
+            obj.mul_demo();
+            Console.WriteLine("The value of a={0} and b ={1}",obj.n1,obj.n2);
+            
+            Console.ReadKey();
+        }
+    }
+
+    class add
+    {
+        int n1, n2, sum;
+        public void add_demo()
+        {
+            Console.WriteLine("Process for addition\n Enter two numbers");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            n2 = Convert.ToInt32(Console.ReadLine());
+            sum = n1 + n2;
+            Console.WriteLine("The addition is ="+sum);
+        }
+    }
+     
+    class sub : add
+    {
+        int n1, n2, sum;
+        public void sub_demo()
+        {
+            Console.WriteLine("Process for substraction \n Enter two numbers");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            n2 = Convert.ToInt32(Console.ReadLine());
+            sum = n1 - n2;
+            Console.WriteLine("The sub is =" + sum);
+        }
+    }
+    class mul : sub
+    {
+      public int n1, n2, sum;
+        public void mul_demo()
+        {
+            Console.WriteLine("Process for Multiplication \nEnter two numbers");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            n2 = Convert.ToInt32(Console.ReadLine());
+            sum = n1 * n2;
+            Console.WriteLine("The mul is =" + sum);
+        }
+    }
+
+
+
+
+}
+
+//WAP to accept a number from user and calculate sum of digit, reverse, factorial (Multi level)
+
+
+
+------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication18
+{
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            add obj = new add();
+            obj.acc_demo();
+            obj.add_demo();
+            sub obj1 = new sub();
+            obj1.acc_demo();
+            obj1.sub_Demo();
+            
+            Console.ReadKey();
+        }
+    }
+
+    class accept
+    {
+        public int n1,n2;
+        public void acc_demo()
+        {
+            Console.WriteLine("Enter two numbers");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            n2 = Convert.ToInt32(Console.ReadLine());
+        }
+
+    }
+    class add : accept
+    {
+        public void add_demo()
+        {
+            int sum;
+            sum=n1 + n2;
+            Console.WriteLine("The addition of {0} and {1} is ={2}",n1,n2,sum);
+        }
+    }
+    class sub : accept
+    {
+        public void sub_Demo()
+        {
+            int res;
+            res = n1 - n2;
+            Console.WriteLine("The sub of {0} and {1} is ={2}", n1, n2, res);
+        }
+    }
+
+}
+
+//WAP to accept size from user and accordingly accept the no from user and arrange in ascending and descending order()
+
+
+
+
